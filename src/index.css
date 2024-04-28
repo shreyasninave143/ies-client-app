@@ -1,0 +1,63 @@
+.header {
+  border: 1px solid black;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-right, .header-left {
+  display: flex;
+  align-items: center;
+}
+.header-right button {
+  margin: 20px;
+  padding: 5px;
+}
+.header-right input {
+  margin: 20px;
+  padding: 5px;
+}
+.header-left .logo {
+  width: 5vw;
+  display: block;
+  margin-left: 50px;
+}
+
+.main-block {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+}
+
+/* side menu */
+.sidemenu-component:hover {
+  cursor: pointer;
+}
+.sidemenu {
+  border: 1px solid blue;
+  width: 20vw;
+}
+.side-menu-link {
+  margin-left: 5%;
+}
+.content-body {
+  border: 1px solid blue;
+  width: 80vw;
+}
+
+
+.moduleName-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+}
+.modulename {
+  font-weight: bold;
+}
+.module-options {
+  margin-left: 15%;
+  
+}
+.downarrow {
+  margin-right: 20%;
+}
