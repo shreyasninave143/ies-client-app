@@ -57,11 +57,14 @@ const ModuleOption = ({ options }) => {
             case "Pending Notices":
               link = "correspondence/pending-notices";
               break;
+            case "Dashboard":
+              link = "dashboard";
+              break;
             default:
               break;
           }
           return (
-            <Link to={link}><p key={option}>{option}</p></Link>
+            <Link key={index} to={link}><p>{option}</p></Link>
           )
         }
         )

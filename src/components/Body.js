@@ -17,6 +17,9 @@ import DetermineEligibility from './eligibility-determination/DetermineEligibili
 import Correspondence from './correspondence/Correspondence';
 import HistoryNotices from './correspondence/HistoryNotices';
 import PendingNotices from './correspondence/PendingNotices';
+import Dashboard from './dashboard/Dashboard';
+import Reports from './reports/Reports';
+import BenefitIssuance from './benefit-issuance/BenefitIssuance';
 
 
 
@@ -34,6 +37,18 @@ const Body = () => {
       path: "/browse",
       element: <Browse />,
       children: [
+        {
+          path: "dashboard",
+          element: <Dashboard />
+        },
+        {
+          path: "reports",
+          element: <Reports />
+        },
+        {
+          path: "benefit-issuance",
+          element: <BenefitIssuance />
+        },
         {
           path: "admin/create-account",
           element: <CreateAccount />,
