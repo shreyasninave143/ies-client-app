@@ -1,21 +1,115 @@
-import ContentBody from './ContentBody';
-import Header from './Header';
-import SideMenu from './SideMenu';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Browse from './Browse';
+import Login from './Login';
+import Signup from './Signup';
+import CreateAccount from './admin/CreateAccount';
+import ViewAccounts from './admin/ViewAccounts';
+import CreatePlan from './admin/CreatePlan';
+import ViewPlans from './admin/ViewPlans';
+import CreateApplication from './application-registration/CreateApplication';
+import ViewApplication from './application-registration/ViewApplication';
+import PlanSelection from './data-collection/PlanSelection';
+import IncomeDetails from './data-collection/IncomeDetails';
+import EducationDetails from './data-collection/EducationDetails';
+import KidsDetails from './data-collection/KidsDetails';
+import SummaryScreen from './data-collection/SummaryScreen';
+import DetermineEligibility from './eligibility-determination/DetermineEligibility';
+import Correspondence from './correspondence/Correspondence';
+import HistoryNotices from './correspondence/HistoryNotices';
+import PendingNotices from './correspondence/PendingNotices';
+
+
 
 const Body = () => {
-  return (
-    <>
-      <Header />
-      <div className='main-block'>
-        <div className='sidemenu'>
-          <SideMenu />
-        </div>
-        <div className='content-body'>
-          <ContentBody />
-        </div>
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />
+    },
+    {
+      path: "/login",
+      element: <Login />
+    },
+    {
+      path: "/browse",
+      element: <Browse />,
+      children: [
+        {
+          path: "admin/create-account",
+          element: <CreateAccount />,
+        },
+        {
+          path: "admin/view-accounts",
+          element: <ViewAccounts />,
+        },
+        {
+          path: "admin/create-plan",
+          element: <CreatePlan />
+        },
+        {
+          path: "admin/view-plans",
+          element: <ViewPlans />
+        },
 
-      </div>
-    </>
+        // Application Registration Routes
+        {
+          path: "application-registration/create-application",
+          element: <CreateApplication />
+        },
+        {
+          path: "application-registration/view-application",
+          element: <ViewApplication />
+        },
+
+        // Data Collection Routes
+        {
+          path: "data-collection/plan-selection",
+          element: <PlanSelection />
+        },
+        {
+          path: "data-collection/income-details",
+          element: <IncomeDetails />
+        },
+        {
+          path: "data-collection/education-details",
+          element: <EducationDetails />
+        },
+        {
+          path: "data-collection/kids-details",
+          element: <KidsDetails />
+        },
+        {
+          path: "data-collection/summary-screen",
+          element: <SummaryScreen />
+        },
+        {
+          path: "eligibility-determination/determine-eligibility",
+          element: <DetermineEligibility />
+        },
+        {
+          path: "correspondence",
+          element: <Correspondence />
+        },
+        {
+          path: "correspondence/pending-notices",
+          element: <PendingNotices />
+        },
+        {
+          path: "correspondence/history-notices",
+          element: <HistoryNotices />
+        },
+
+      ],
+    },
+    {
+      path: "/signup",
+      element: <Signup />
+    },
+  ]);
+  return (
+    <div>
+      <RouterProvider router={appRouter}></RouterProvider>
+    </div>
   );
 };
 
