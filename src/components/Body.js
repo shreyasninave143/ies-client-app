@@ -20,7 +20,7 @@ import PendingNotices from './correspondence/PendingNotices';
 import Dashboard from './dashboard/Dashboard';
 import Reports from './reports/Reports';
 import BenefitIssuance from './benefit-issuance/BenefitIssuance';
-
+import ChangePassword from './ChangePassword';
 
 
 const Body = () => {
@@ -32,6 +32,10 @@ const Body = () => {
     {
       path: "/login",
       element: <Login />
+    },
+    {
+      path: "/change-password",
+      element: <ChangePassword />
     },
     {
       path: "/browse",
